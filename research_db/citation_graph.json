@@ -1,0 +1,35 @@
+{
+  "nodes": [
+    [
+      "http://arxiv.org/abs/2603.15619v1",
+      {
+        "title": "Mixture-of-Depths Attention"
+      }
+    ],
+    [
+      "http://arxiv.org/abs/2603.15618v1",
+      {
+        "title": "Look Before Acting: Enhancing Vision Foundation Representations for Vision-Language-Action Models"
+      }
+    ],
+    [
+      "http://arxiv.org/abs/2603.15615v1",
+      {
+        "title": "Mechanistic Origin of Moral Indifference in Language Models"
+      }
+    ],
+    [
+      "http://arxiv.org/abs/2603.15611v1",
+      {
+        "title": "Code-A1: Adversarial Evolving of Code LLM and Test LLM via Reinforcement Learning"
+      }
+    ],
+    [
+      "http://arxiv.org/abs/2603.15599v1",
+      {
+        "title": "SmartSearch: How Ranking Beats Structure for Conversational Memory Retrieval"
+      }
+    ]
+  ],
+  "edges": []
+}

@@ -6,20 +6,9 @@ from agent import process_paper
 from tools import search_arxiv
 from supabase_db import paper_exists
 from notifier import send_notification
+from topic_manager import load_topics
 
 load_dotenv()
-
-def load_topics():
-    """Load research topics from config file."""
-    try:
-        with open("topics.json") as f:
-            return json.load(f)["topics"]
-    except FileNotFoundError:
-        print("topics.json not found. Using default topics.")
-        return [
-            "LLMs healthcare foundation model",
-            "large language models clinical decision support"
-        ]
 
 def run_daily_update():
     """Run scheduled update and save new papers to cloud."""
@@ -27,6 +16,11 @@ def run_daily_update():
     send_notification("🔄 *Cloud update started...*")
     
     topics = load_topics()
+    if not topics:
+        print("No topics found in topics.json")
+        send_notification("⚠️ No topics configured for update.")
+        return
+    
     total_new = 0
     
     for topic in topics:

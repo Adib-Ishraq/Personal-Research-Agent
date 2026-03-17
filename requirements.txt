@@ -8,3 +8,4 @@ sentence-transformers
 networkx
 schedule
 supabase
+python-telegram-bot

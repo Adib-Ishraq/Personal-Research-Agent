@@ -53,3 +53,28 @@ def list_all_papers():
         return
     for i, meta in enumerate(results["metadatas"]):
         print(f"  [{i+1}] {meta.get('title', 'Unknown')[:60]} ({meta.get('published', '')})")
+
+def delete_paper(arxiv_id: str):
+    """Delete a paper by its arxiv_id"""
+    try:
+        collection.delete(ids=[arxiv_id])
+        print(f"✅ Deleted: {arxiv_id}")
+        return True
+    except Exception as e:
+        print(f"❌ Error deleting paper: {e}")
+        return False
+
+def delete_all_papers():
+    """Clear all papers from memory"""
+    try:
+        results = collection.get()
+        if results["ids"]:
+            collection.delete(ids=results["ids"])
+            print(f"✅ Deleted all {len(results['ids'])} papers!")
+            return True
+        else:
+            print("No papers to delete.")
+            return False
+    except Exception as e:
+        print(f"❌ Error clearing database: {e}")
+        return False
