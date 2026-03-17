@@ -1,0 +1,10 @@
+groq
+arxiv
+pdfplumber
+requests
+python-dotenv
+chromadb
+sentence-transformers
+networkx
+schedule
+supabase
